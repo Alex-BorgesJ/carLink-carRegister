@@ -1,19 +1,30 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Calendar;
 
 public class Vehicle {
+	
 
     private String placa, marca, modelo;
     private int ano;
     private double kilometragem;
-    private String arquivo = "Marcas.txt", separador = ";";
+    private static String arquivo 	= "Marcas.txt",dados = "dados.txt",separador = ";";
 
     public Vehicle() {
 
+    }
+
+    public static String getSeparador() {
+        return separador;
+    }
+
+    public static String getDados() {
+        return dados;
     }
 
     public String getPlaca() {
@@ -123,4 +134,49 @@ public class Vehicle {
 
         return marcas;
     }
+    
+    public String toString(){
+        return
+        ("Placa: " + placa)+"\n"+
+        ("Marca: " + marca)+"\n"+
+        ("Modelo: " + modelo)+"\n"+
+        ("Ano: " + ano)+"\n"+
+        ("Kilometragem: " + kilometragem);
+    }
+    
+    public  boolean gravaNoArquivo () {
+		
+		try {
+			
+			FileWriter fw = new FileWriter ( dados, true );
+			
+				BufferedWriter bw = new BufferedWriter ( fw );
+				
+					bw.write ( placa );
+					bw.write ( separador );
+					bw.write ( marca );
+					bw.write ( separador );
+					bw.write ( modelo );
+					bw.write ( separador );
+					bw.write ( ano );
+					bw.write ( separador );
+					bw.write ( ""+kilometragem );
+					bw.newLine();
+					
+				bw.close();
+				
+			fw.close();
+			
+			return true;
+			
+		} catch ( IOException e ) {
+			
+			e.printStackTrace();
+			
+			return false;
+		}
+	}
 }
+
+
+

@@ -1,0 +1,10 @@
+abc1d13;honda;a;2000;0.0;Carro
+abc1d13;honda;a;2000;0.0;Carro
+abc1d13;honda;a;2009;0.0;Carro
+abc1d13;honda;a;2000;0.0;Carro
+abc1d23;honda;a;2000;0.0;Carro
+abc1d13;honda;a;2000;0.0;Carro
+abc1d13;honda;0;2000;0.0;Carro
+abc2d23;honda;a;2000;4.0;Carro
+ASD2023;ferrari;gr455;2022;0.0;Carro
+asd4d34;yamaha;z1000;1997;12000.2;Moto
